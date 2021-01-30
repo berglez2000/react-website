@@ -59,7 +59,7 @@ body {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   outline: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .btn:hover {
@@ -67,10 +67,6 @@ body {
   transition: all 0.5s ease;
   background-color: black;
   color: white;
-}
-
-.btn a {
-  z-index: 2;
 }
 
 body section#home,
@@ -155,6 +151,14 @@ body section#products {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+#home .box-4 .btns a {
+  z-index: 2;
+}
+
+#home .box-4 .btns a button {
+  z-index: 1;
 }
 
 #products {
