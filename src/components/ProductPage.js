@@ -1,6 +1,7 @@
 //Import check
 import Check from '../img/check-mark.png';
 import { useState } from 'react';
+import gsap from 'gsap';
 
 const ProductPage = ({ 
   title, smallImages, name, 
@@ -32,14 +33,20 @@ const ProductPage = ({
   }
 
   return (
-    <div className="product__page">
+    <div className="product__page" >
 
       <section className="image__section">
         <h1 className="title">{title}</h1>
         <div className="large__image">
-          <button onClick={() => moveImage("left")} className="left"><i onClick={() => moveImage("left")} className="fas fa-arrow-left left"></i></button>
-          <img src={`./img/${name}-${currentImg}.jpg`} alt=""/>
-          <button onClick={() => moveImage("right")} className="right"><i onClick={() => moveImage("right")} className="fas fa-arrow-right right"></i></button>
+          <button onClick={(e) => {
+            e.preventDefault();
+            moveImage("left")
+            }} className="left"><i onClick={() => moveImage("left")} className="fas fa-arrow-left left"></i></button>
+          <img className="img__large" src={`./img/${name}-${currentImg}.jpg`} alt=""/>
+          <button onClick={(e) => {
+            e.preventDefault();
+            moveImage("right")
+            }} className="right"><i onClick={() => moveImage("right")} className="fas fa-arrow-right right"></i></button>
         </div>
         <div className="small__images">
           {smallImages.map((img, index) => {
@@ -90,11 +97,11 @@ const ProductPage = ({
           <div className="links">
             <div className="mail">
               <i className="fas fa-envelope"></i>
-              <a href="">anjaozbolt.design@gmail.com</a>
+              <a href="mailto:anjaozbolt.design@gmail.com">anjaozbolt.design@gmail.com</a>
             </div>
             <div className="ig">
               <i className="fab fa-instagram"></i>
-              <a href="">anjaozboltdesign</a>
+              <a href="https://www.instagram.com/anjaozboltdesign/">anjaozboltdesign</a>
             </div>
           </div>
         </div>

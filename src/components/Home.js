@@ -1,9 +1,9 @@
 import Button from './Button'
 
-const Home = ({ imgSrc }) => {
+const Home = ({ imgSrc, onLoad }) => {
 
   return (
-    <section id="home" >
+    <section id="home" onLoad={onLoad} >
       <div className="box-1"></div>
       <div className="box-2">
         <img src={imgSrc} className="home-img" alt="home img"/>
@@ -20,8 +20,7 @@ const Home = ({ imgSrc }) => {
       <div className="box-4">
         <h3 className="subtitle" >Personalizirana darila & Ilustracije</h3>
         <div className="btns">
-          <a href="#products"><Button btnClass="" btnText="Izdelki" /></a>
-          <a href="#about"><Button btnClass="" btnText="O meni" /></a>
+          <a href="#products"> <Button btnClass="" btnText="Izdelki" /> </a>
         </div>
       </div>
     </section>

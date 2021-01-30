@@ -56,8 +56,8 @@ const App = () => {
   console.log(images);
 
   // Gsap Animations
-  const animations = () => {
-/*     gsap.registerPlugin(ScrollTrigger);
+  const homeAnimations = () => {
+    gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline();
     tl.from(".home-img", {duration: 1, opacity: 0});
     tl.from("h1 span", {duration: 0.5, opacity: 0, stagger: 0.10});
@@ -69,18 +69,18 @@ const App = () => {
       opacity: 0, 
       stagger: 0.25, 
       x: -50
-    }); */
+    });
   }
 
   return (
     <Router>
-      <div /* onLoad={() => animations()} */
+      <div
         className="container">
         <Switch>
           {/* ADD Routes */}
           <Route path="/" exact render={() => (
             <>
-              <Home imgSrc={HomeImg} />
+              <Home imgSrc={HomeImg} onLoad={homeAnimations} />
               <Products />
             </>
           )} />
