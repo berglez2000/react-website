@@ -20,7 +20,7 @@ const Home = ({ imgSrc, onLoad }) => {
       <div className="box-4">
         <h3 className="subtitle" >Personalizirana darila & Ilustracije</h3>
         <div className="btns">
-          <a href="#products"> <Button btnClass="" btnText="Izdelki" /> </a>
+          <a href="#products" style={{background: "transparent"}}> <Button btnClass="" btnText="Izdelki" /> </a>
         </div>
       </div>
     </section>
