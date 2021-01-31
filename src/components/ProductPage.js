@@ -1,7 +1,7 @@
 //Import check
 import Check from '../img/check-mark.png';
 import { useState } from 'react';
-import gsap from 'gsap';
+import { Link } from 'react-router-dom';
 
 const ProductPage = ({ 
   title, smallImages, name, 
@@ -36,6 +36,7 @@ const ProductPage = ({
     <div className="product__page" >
 
       <section className="image__section">
+        <Link to="/" ><i class="fas fa-chevron-left"></i></Link>
         <h1 className="title">{title}</h1>
         <div className="large__image">
           <button onClick={(e) => {
@@ -101,7 +102,7 @@ const ProductPage = ({
             </div>
             <div className="ig">
               <i className="fab fa-instagram"></i>
-              <a href="https://www.instagram.com/anjaozboltdesign/">anjaozboltdesign</a>
+              <a target="_blank" href="https://www.instagram.com/anjaozboltdesign/">anjaozboltdesign</a>
             </div>
           </div>
         </div>

@@ -53,7 +53,6 @@ const App = () => {
 
 
   pushImages();
-  console.log(images);
 
   // Gsap Animations
   const homeAnimations = () => {
@@ -73,7 +72,7 @@ const App = () => {
   }
 
   return (
-    <Router>
+    <Router basename="/">
       <div
         className="container">
         <Switch>
@@ -85,7 +84,7 @@ const App = () => {
             </>
           )} />
           <Route path="/dig-foto" exact render={() => (
-            <ProductPage 
+            <ProductPage
               title="PERSONALIZIRANE DIGITALNE ILUSTRACIJE"
               productDesc="Ilustracije ponovno oživijo fotografije ter jim dodajo še bolj osebno noto. Čudovito darilo za prijateljico, sestro, punco, mamo…
               Okvirji so v velikostih A4, A5 ali 10x15 cm."
@@ -104,7 +103,7 @@ const App = () => {
 
           <Route path="/linijska-foto" exact render={() => (
             <ProductPage 
-              title="personalizirane digitalne ilustracije-linjske"
+              title="personalizirane digitalne ilustracije-linijske"
               productDesc="Poudarijo bistvene lastnosti in polepšajo pozabljene fotografije. Odlično darilo, ki se dotakne vsakogar. Bolj primerne so fotografije obraza ali od blizu slikani motivi.V enkraten nakup je vključena verzija iste ilustracije z belim in črnim ozadjem. Okvirji so v velikostih A4, A5 ali 10x15 cm."
               hasFrame={true}
               hasColors={false}

@@ -1,7 +1,24 @@
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@font-face {
+  src: url(../src/fonts/Poppins/Poppins-Thin.ttf);
+  font-family: pop;
+}
+
+@font-face {
+  src: url(../src/fonts/Amatic_SC/AmaticSC-Regular.ttf);
+  font-family: amatic;
+}
+
+@font-face {
+  src: url(../src/fonts/Montserrat/Montserrat-ThinItalic.ttf);
+  font-family: mont;
+}
+
+@font-face {
+  src: url(../src/fonts/Montserrat/Montserrat-LightItalic.ttf);
+  font-family: mont-main;
+}
+
 // Funtions
 @mixin flexCenter($direction) {
   display: flex;
@@ -50,24 +67,28 @@ html {
 body {
   min-height: 100vh;
   width: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: pop, sans-serif;
 }
 
 // Button Style
 .btn {
-  font-size: 18px;
-  border: 1px white solid;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #141111;
+  padding: 12px 25px;
   border-radius: 5px;
-  padding: 6px 15px;
-  margin: 20px 20px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  outline: none;
-  z-index: 2;
+  display: inline-block;
+  border: 1px white solid;
+  transition: all 0.4s ease 0s;
   &:hover {
-    transition: all 0.5s ease;
-    background-color: black;
-    color: white;
+    background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
+    border: none;
   }
 }
 
@@ -84,11 +105,11 @@ body {
 #home {
   background-color: black;
   display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 80% 20%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70% 30%;
   color: white;
   .box-2 {
-    @include flexCenter(column);
+    @include flexBox(flex-end, center, column);
     img {
       width: 550px;
       pointer-events: none;
@@ -100,48 +121,43 @@ body {
   }
   .box-4 {
     @include flexBox(flex-start, center, column);
-    grid-column-end: 4;
-    grid-column-start: 1;
+    margin-top: 50px;
     h3 {
       font-size: 30px;
       color: rgb(160, 157, 157);
       text-align: center;
     }
     .btns {
+      margin-top: 20px;
       @include flexCenter(row);
-      a {
-        z-index: 2;
-        button {
-          z-index: 1;
-        }
-      }
     }
   }
 }
 
 // Products section
 #products {
+  background-image: linear-gradient(#ffefda 0%, #facdbe 100%);
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5rem;
+  grid-gap: 4rem;
   .product__container {
     @include flexCenter(column);
   }
   .product.lying {
-    width: 533px;
-    height: 400px;
+    width: 450px;
+    height: 337px;
     a {
-      width: 533px;
-      height: 400px;
+      width: 450px;
+      height: 337px;
     }
   }
   .product.standing {
-    width: 400px;
-    height: 533px;
+    width: 337px;
+    height: 450px;
     a {
-      width: 400px;
-      height: 533px;
+      width: 337px;
+      height: 450px;
     }
   }
   a.top {
@@ -151,6 +167,8 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    border: 1px black solid;
+    border-radius: 5px;
     a {
       cursor: pointer;
       color: white;
@@ -159,11 +177,11 @@ body {
       background-color: rgba($color: #000000, $alpha: 0.5);
       opacity: 0;
       transition: all 0.5s ease;
-      font-size: 50px;
+      font-size: 44px;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-family: "Amatic SC", cursive;
+      font-family: amatic, cursive;
       &:hover {
         opacity: 1;
         transition: all 0.5s ease;
@@ -179,12 +197,26 @@ body {
   grid-template-columns: 55% 45%;
   grid-template-rows: 1fr;
   padding: 20px 30px;
-
+  font-family: mont-main, sans-serif;
+  color: #000000;
   .title {
     font-size: 2.5rem;
     text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
+    font-family: mont, sans-serif;
     letter-spacing: 1px;
+  }
+
+  i.fas.fa-chevron-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1.75rem;
+    z-index: 999;
+    border: none;
+    outline: none;
+    background: transparent;
   }
 
   .image__section {
@@ -361,6 +393,29 @@ body {
 }
 
 @media screen and (max-width: 1440px) {
+  #home {
+    grid-template-rows: 75% 25%;
+  }
+
+  #products {
+    .product.lying {
+      width: 500px;
+      height: 375px;
+      a {
+        width: 500px;
+        height: 375px;
+      }
+    }
+    .product.standing {
+      width: 375px;
+      height: 500px;
+      a {
+        width: 375px;
+        height: 500px;
+      }
+    }
+  }
+
   .product__page {
     .image__section {
       .large__image {
@@ -558,7 +613,7 @@ body {
 
 @media screen and (max-width: 1024px) {
   #home {
-    min-height: 90vh;
+    grid-template-rows: 70% 30%;
     .box-2 {
       img {
         width: 700px;
@@ -572,6 +627,7 @@ body {
         font-size: 3rem;
       }
       .btn {
+        margin-top: 30px;
         font-size: 28px;
       }
     }
@@ -600,7 +656,7 @@ body {
       }
       a.top {
         display: block;
-        font-family: "Amatic SC", cursive;
+        font-family: amatic, cursive;
         text-transform: uppercase;
         letter-spacing: 2px;
         text-align: center;
@@ -684,6 +740,11 @@ body {
       }
       h1 {
         font-size: 4.5rem;
+      }
+    }
+    .box-4 {
+      .btn {
+        margin-top: 20px;
       }
     }
   }
@@ -806,10 +867,17 @@ body {
   #home {
     .box-2 {
       img {
-        width: 450px;
+        width: 400px;
       }
       h1 {
         font-size: 4rem;
+      }
+    }
+    .box-4 {
+      margin: 0;
+      .btn {
+        margin-top: 10px;
+        font-size: 20px;
       }
     }
   }
@@ -935,9 +1003,6 @@ body {
 @media screen and (max-width: 455px) {
   #home {
     grid-template-rows: 70% 30%;
-    .box-4 {
-      justify-content: space-around;
-    }
   }
 
   #products {
@@ -982,13 +1047,13 @@ body {
 
       .price-sect {
         .price {
-          font-size: 3.25rem;
+          font-size: 3rem;
           p {
             font-size: 26px;
           }
         }
         .add-price {
-          font-size: 2.5rem;
+          font-size: 2.25rem;
           p {
             font: 24px;
           }
@@ -1021,6 +1086,19 @@ body {
 }
 
 @media screen and (max-width: 414px) {
+  body section#home {
+    padding: 10px;
+  }
+
+  #home {
+    grid-template-rows: 65% 35%;
+    .box-2 {
+      img {
+        width: 350px;
+      }
+    }
+  }
+
   .product__page {
     .image__section {
       .large__image {
@@ -1074,10 +1152,10 @@ body {
 
       .price-sect {
         .price {
-          font-size: 3rem;
+          font-size: 2.75rem;
         }
         .add-price {
-          font-size: 2.25rem;
+          font-size: 2rem;
           p {
             font-size: 22px;
           }
@@ -1140,7 +1218,15 @@ body {
   body {
     section#products.products,
     section#home {
-      padding: 20px 10px;
+      padding: 10px;
+    }
+  }
+
+  #home {
+    .box-4 {
+      .btn {
+        padding: 8px 15px;
+      }
     }
   }
 
@@ -1341,7 +1427,7 @@ body {
     }
     .box-4 {
       .btns {
-        button {
+        .btn {
           font-size: 16px;
           padding: 5px 10px;
         }
