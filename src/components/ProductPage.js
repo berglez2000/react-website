@@ -8,7 +8,7 @@ const ProductPage = ({
   productDesc, price, checks, 
   hasFrame, personPrice, framePrice,
   imgLength, hasColors, colors, hasSizes,
-  hasColorSizes
+  hasColorSizes, hasAddDesc, addDesc
   }) => {
 
   let [currentImg, setCurrentImg] = useState(0)
@@ -58,6 +58,11 @@ const ProductPage = ({
 
       <section className="about__section">
         <h1 className="title primary">{title}</h1>
+        {hasAddDesc ? <div className="add_description">
+          {addDesc.map(desc => {
+            return <p>{desc}</p>
+          })}
+        </div> : ""}
         <p className="product-desc" >{productDesc}</p>
         {hasColorSizes ? <div className="color-sizes">
           {hasColors ? <div className="color-section">

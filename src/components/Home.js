@@ -18,6 +18,7 @@ const Home = ({ imgSrc, onLoad }) => {
       <div className="box-4">
         <h3 className="subtitle" >Personalizirana darila & Ilustracije</h3>
         <div className="btns">
+          <a href="#discount" className="btn"><span>Novo</span></a>
           <a href="#products" className="btn"><span>Izdelki</span></a>
         </div>
       </div>

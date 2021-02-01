@@ -81,6 +81,7 @@ body {
   display: inline-block;
   border: 1px white solid;
   transition: all 0.4s ease 0s;
+  margin: 0 10px;
   &:hover {
     background: #434343;
     letter-spacing: 1px;
@@ -130,6 +131,52 @@ body {
     .btns {
       margin-top: 20px;
       @include flexCenter(row);
+    }
+  }
+}
+
+#discount {
+  @include flexCenter(row);
+  height: auto;
+  padding: 50px 20px;
+  background-color: #ffefda;
+  .product__container {
+    @include flexCenter(column);
+    .product.lying {
+      width: 550px;
+      height: 413px;
+      a {
+        width: 550px;
+        height: 413px;
+      }
+    }
+    .product {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 1px black solid;
+      border-radius: 5px;
+      a {
+        cursor: pointer;
+        color: white;
+        @include flexCenter(row);
+        flex-wrap: wrap;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        opacity: 0;
+        transition: all 0.5s ease;
+        font-size: 50px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: amatic, cursive;
+        &:hover {
+          opacity: 1;
+          transition: all 0.5s ease;
+        }
+      }
+    }
+    a.top {
+      display: none;
     }
   }
 }
@@ -263,7 +310,13 @@ body {
   }
   .about__section {
     @include flexBox(space-around, flex-start, column);
-    .product-desc {
+
+    .add_description {
+      font-weight: bolder;
+    }
+
+    .product-desc,
+    .add_description {
       text-align: center;
       width: 80%;
       font-size: 22px;
@@ -430,7 +483,8 @@ body {
         text-align: center;
         width: 80%;
       }
-      .product-desc {
+      .product-desc,
+      .add_description {
         font-size: 20px;
       }
       .color-sizes {
@@ -502,7 +556,8 @@ body {
       .title {
         display: none;
       }
-      .product-desc {
+      .product-desc,
+      .add_description {
         width: 100%;
         font-size: 28px;
       }
@@ -637,6 +692,10 @@ body {
   #products {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
+  }
+
+  #products,
+  #discount {
     .product__container {
       .product.lying {
         width: 600px;
@@ -660,6 +719,7 @@ body {
         text-transform: uppercase;
         letter-spacing: 2px;
         text-align: center;
+        font-size: 44px;
       }
       .product {
         a:hover {
@@ -748,7 +808,8 @@ body {
       }
     }
   }
-  #products {
+  #products,
+  #discount {
     .product__container {
       .product.lying {
         width: 500px;
@@ -828,7 +889,8 @@ body {
     }
   }
 
-  #products {
+  #products,
+  #discount {
     .product__container {
       .product.lying {
         width: 450px;
@@ -884,6 +946,10 @@ body {
 
   #products {
     grid-gap: 3rem;
+  }
+
+  #products,
+  #discount {
     .product__container {
       .product.lying {
         width: 400px;
@@ -903,6 +969,7 @@ body {
       }
     }
   }
+
   .product__page {
     padding: 10px 5px;
     .image__section {
@@ -1007,6 +1074,10 @@ body {
 
   #products {
     grid-gap: 2rem;
+  }
+
+  #products,
+  #discount {
     .product__container {
       .product.lying {
         width: 350px;
@@ -1040,7 +1111,8 @@ body {
       }
     }
     .about__section {
-      .product-desc {
+      .product-desc,
+      .add_description {
         padding: 5px;
         font-size: 24px;
       }
@@ -1115,7 +1187,8 @@ body {
       }
     }
     .about__section {
-      .product-desc {
+      .product-desc,
+      .add_description {
         padding: 15px 10px;
       }
 
@@ -1190,6 +1263,10 @@ body {
 
   #products {
     grid-gap: 1rem;
+  }
+
+  #products,
+  #discount {
     .product__container {
       .product.lying {
         width: 325px;
@@ -1232,6 +1309,10 @@ body {
 
   #products {
     padding: 0;
+  }
+
+  #products,
+  #discount {
     .product__container {
       .product.lying {
         width: 300px;
@@ -1312,7 +1393,8 @@ body {
       }
     }
     .about__section {
-      .product-desc {
+      .product-desc,
+      .add_description {
         font-size: 20px;
       }
 
@@ -1390,7 +1472,8 @@ body {
     }
   }
 
-  #products {
+  #products,
+  #discount {
     .product__container {
       .product.lying {
         width: 300px;
@@ -1437,6 +1520,10 @@ body {
 
   #products {
     grid-gap: 2rem;
+  }
+
+  #products,
+  #discount {
     .product__container {
       .product.lying {
         width: 275px;
@@ -1503,7 +1590,8 @@ body {
         }
       }
 
-      .product-desc {
+      .product-desc,
+      .add_description {
         font-size: 18px;
       }
       .price-sect {
@@ -1552,7 +1640,8 @@ body {
     }
   }
 
-  #products {
+  #products,
+  #discount {
     .product__container {
       a.top {
         font-size: 1.75rem;

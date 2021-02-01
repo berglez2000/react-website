@@ -77,6 +77,7 @@ body {
   border: 1px white solid;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
+  margin: 0 10px;
 }
 
 .btn:hover {
@@ -170,6 +171,98 @@ body section#products {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+#discount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: auto;
+  padding: 50px 20px;
+  background-color: #ffefda;
+}
+
+#discount .product__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#discount .product__container .product.lying {
+  width: 550px;
+  height: 413px;
+}
+
+#discount .product__container .product.lying a {
+  width: 550px;
+  height: 413px;
+}
+
+#discount .product__container .product {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+#discount .product__container .product a {
+  cursor: pointer;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: amatic, cursive;
+}
+
+#discount .product__container .product a:hover {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#discount .product__container a.top {
+  display: none;
 }
 
 #products {
@@ -409,7 +502,12 @@ body section#products {
           flex-direction: column;
 }
 
-.product__page .about__section .product-desc {
+.product__page .about__section .add_description {
+  font-weight: bolder;
+}
+
+.product__page .about__section .product-desc,
+.product__page .about__section .add_description {
   text-align: center;
   width: 80%;
   font-size: 22px;
@@ -751,7 +849,8 @@ body section#products {
     text-align: center;
     width: 80%;
   }
-  .product__page .about__section .product-desc {
+  .product__page .about__section .product-desc,
+  .product__page .about__section .add_description {
     font-size: 20px;
   }
   .product__page .about__section .color-sizes .color-section h1.secondary,
@@ -812,7 +911,8 @@ body section#products {
   .product__page .about__section .title {
     display: none;
   }
-  .product__page .about__section .product-desc {
+  .product__page .about__section .product-desc,
+  .product__page .about__section .add_description {
     width: 100%;
     font-size: 28px;
   }
@@ -923,30 +1023,37 @@ body section#products {
     -ms-grid-rows: (1fr)[6];
         grid-template-rows: repeat(6, 1fr);
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 600px;
     height: 450px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 600px;
     height: 450px;
   }
-  #products .product__container .product.standing {
+  #products .product__container .product.standing,
+  #discount .product__container .product.standing {
     width: 450px;
     height: 600px;
   }
-  #products .product__container .product.standing a {
+  #products .product__container .product.standing a,
+  #discount .product__container .product.standing a {
     width: 450px;
     height: 600px;
   }
-  #products .product__container a.top {
+  #products .product__container a.top,
+  #discount .product__container a.top {
     display: block;
     font-family: amatic, cursive;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
+    font-size: 44px;
   }
-  #products .product__container .product a:hover {
+  #products .product__container .product a:hover,
+  #discount .product__container .product a:hover {
     opacity: 0;
   }
   .product__page .image__section .large__image img {
@@ -996,19 +1103,23 @@ body section#products {
   #home .box-4 .btn {
     margin-top: 20px;
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 500px;
     height: 375px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 500px;
     height: 375px;
   }
-  #products .product__container .product.standing {
+  #products .product__container .product.standing,
+  #discount .product__container .product.standing {
     width: 400px;
     height: 533px;
   }
-  #products .product__container .product.standing a {
+  #products .product__container .product.standing a,
+  #discount .product__container .product.standing a {
     width: 400px;
     height: 533px;
   }
@@ -1059,19 +1170,23 @@ body section#products {
   #home .box-2 img {
     width: 500px;
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 450px;
     height: 338px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 450px;
     height: 338px;
   }
-  #products .product__container .product.standing {
+  #products .product__container .product.standing,
+  #discount .product__container .product.standing {
     width: 400px;
     height: 533px;
   }
-  #products .product__container .product.standing a {
+  #products .product__container .product.standing a,
+  #discount .product__container .product.standing a {
     width: 400px;
     height: 533px;
   }
@@ -1101,19 +1216,23 @@ body section#products {
   #products {
     grid-gap: 3rem;
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 400px;
     height: 300px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 400px;
     height: 300px;
   }
-  #products .product__container .product.standing {
+  #products .product__container .product.standing,
+  #discount .product__container .product.standing {
     width: 350px;
     height: 466px;
   }
-  #products .product__container .product.standing a {
+  #products .product__container .product.standing a,
+  #discount .product__container .product.standing a {
     width: 350px;
     height: 466px;
   }
@@ -1190,30 +1309,36 @@ body section#products {
   #products {
     grid-gap: 2rem;
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 350px;
     height: 263px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 350px;
     height: 263px;
   }
-  #products .product__container .product.standing {
+  #products .product__container .product.standing,
+  #discount .product__container .product.standing {
     width: 300px;
     height: 400px;
   }
-  #products .product__container .product.standing a {
+  #products .product__container .product.standing a,
+  #discount .product__container .product.standing a {
     width: 300px;
     height: 400px;
   }
-  #products .product__container a.top {
+  #products .product__container a.top,
+  #discount .product__container a.top {
     font-size: 2.75rem;
   }
   .product__page .image__section .large__image img {
     max-width: 375px;
     max-height: 450px;
   }
-  .product__page .about__section .product-desc {
+  .product__page .about__section .product-desc,
+  .product__page .about__section .add_description {
     padding: 5px;
     font-size: 24px;
   }
@@ -1261,7 +1386,8 @@ body section#products {
     max-width: 80px;
     max-height: 80px;
   }
-  .product__page .about__section .product-desc {
+  .product__page .about__section .product-desc,
+  .product__page .about__section .add_description {
     padding: 15px 10px;
   }
   .product__page .about__section .color-sizes .size-section .sizes li {
@@ -1310,23 +1436,28 @@ body section#products {
   #products {
     grid-gap: 1rem;
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 325px;
     height: 244px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 325px;
     height: 244px;
   }
-  #products .product__container .product.standing {
+  #products .product__container .product.standing,
+  #discount .product__container .product.standing {
     width: 275px;
     height: 366px;
   }
-  #products .product__container .product.standing a {
+  #products .product__container .product.standing a,
+  #discount .product__container .product.standing a {
     width: 275px;
     height: 366px;
   }
-  #products .product__container a.top {
+  #products .product__container a.top,
+  #discount .product__container a.top {
     font-size: 2.25rem;
   }
 }
@@ -1342,11 +1473,13 @@ body section#products {
   #products {
     padding: 0;
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 300px;
     height: 225px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 300px;
     height: 225px;
   }
@@ -1391,7 +1524,8 @@ body section#products {
   .product__page .image__section .large__image img {
     max-height: 350px;
   }
-  .product__page .about__section .product-desc {
+  .product__page .about__section .product-desc,
+  .product__page .about__section .add_description {
     font-size: 20px;
   }
   .product__page .about__section .color-sizes .size-section h1.secondary,
@@ -1439,23 +1573,28 @@ body section#products {
   #home .box-2 img {
     width: 325px;
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 300px;
     height: 225px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 300px;
     height: 225px;
   }
-  #products .product__container .product.standing {
+  #products .product__container .product.standing,
+  #discount .product__container .product.standing {
     width: 250px;
     height: 333px;
   }
-  #products .product__container .product.standing a {
+  #products .product__container .product.standing a,
+  #discount .product__container .product.standing a {
     width: 250px;
     height: 333px;
   }
-  #products .product__container a.top {
+  #products .product__container a.top,
+  #discount .product__container a.top {
     font-size: 2.25rem;
   }
 }
@@ -1474,23 +1613,28 @@ body section#products {
   #products {
     grid-gap: 2rem;
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 275px;
     height: 207px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 275px;
     height: 207px;
   }
-  #products .product__container .product.standing {
+  #products .product__container .product.standing,
+  #discount .product__container .product.standing {
     width: 200px;
     height: 266px;
   }
-  #products .product__container .product.standing a {
+  #products .product__container .product.standing a,
+  #discount .product__container .product.standing a {
     width: 200px;
     height: 266px;
   }
-  #products .product__container a.top {
+  #products .product__container a.top,
+  #discount .product__container a.top {
     font-size: 2rem;
     letter-spacing: 1px;
   }
@@ -1519,7 +1663,8 @@ body section#products {
   .product__page .about__section .color-sizes .color-section .colors .color p {
     font-size: 16px;
   }
-  .product__page .about__section .product-desc {
+  .product__page .about__section .product-desc,
+  .product__page .about__section .add_description {
     font-size: 18px;
   }
   .product__page .about__section .price-sect .price {
@@ -1547,14 +1692,17 @@ body section#products {
   #home .box-2 h1 {
     font-size: 2.5rem;
   }
-  #products .product__container a.top {
+  #products .product__container a.top,
+  #discount .product__container a.top {
     font-size: 1.75rem;
   }
-  #products .product__container .product.lying {
+  #products .product__container .product.lying,
+  #discount .product__container .product.lying {
     width: 250px;
     height: 188px;
   }
-  #products .product__container .product.lying a {
+  #products .product__container .product.lying a,
+  #discount .product__container .product.lying a {
     width: 250px;
     height: 188px;
   }

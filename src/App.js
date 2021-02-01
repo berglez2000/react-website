@@ -8,6 +8,7 @@ import HomeImg from './img/ao.png'
 import Home from './components/Home'
 import Products from './components/Products'
 import ProductPage from './components/ProductPage'
+import Discount from "./components/Discount";
 
 const App = () => {
   const [images, setImages] = useState([
@@ -39,6 +40,11 @@ const App = () => {
     {
       length: 3,
       name: "scrunchie",
+      array: []
+    },
+    {
+      length: 1,
+      name: "popust",
       array: []
     }
   ])
@@ -80,9 +86,29 @@ const App = () => {
           <Route path="/" exact render={() => (
             <>
               <Home imgSrc={HomeImg} onLoad={homeAnimations} />
+              <Discount />
               <Products />
             </>
           )} />
+
+          <Route path="/valentinov-popust" exact render={() => (
+            <ProductPage 
+              title="VALENTINOV PAKET"
+              hasAddDesc={true}
+              addDesc={["Personalizirana ilustracija", "1x print z okvirjem ", "1x povštrček po izbiri", "+ brezplačna poštnina"]}
+              productDesc="
+              Edinstveno darilo s personaliziranim pridihom in hkrati najlepše darilo, ki ga lahko podarite svoji ljubljeni osebi. Ročno izdelano & unikatno."
+              price={45}
+              hasFrame={false}
+              hasColorSizes={false}
+              hasColors={false}
+              smallImages={images[6].array}
+              name="popust"
+              imgLength={1}
+              checks={["Oblikovano in izdelano v Sloveniji", "Ročno izdelano", "Ročno poslikano"]}
+            />
+          )} />
+
           <Route path="/dig-foto" exact render={() => (
             <ProductPage
               title="PERSONALIZIRANE DIGITALNE ILUSTRACIJE"
