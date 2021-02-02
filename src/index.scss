@@ -139,7 +139,7 @@ body {
   @include flexCenter(row);
   height: auto;
   padding: 50px 20px;
-  background-color: #ffefda;
+  background-color: #f0ebe7;
   .product__container {
     @include flexCenter(column);
     .product.lying {
@@ -183,7 +183,7 @@ body {
 
 // Products section
 #products {
-  background-image: linear-gradient(#ffefda 0%, #facdbe 100%);
+  background: #f0ebe7;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);

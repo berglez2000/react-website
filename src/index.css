@@ -189,7 +189,7 @@ body section#products {
           flex-direction: row;
   height: auto;
   padding: 50px 20px;
-  background-color: #ffefda;
+  background-color: #f0ebe7;
 }
 
 #discount .product__container {
@@ -266,8 +266,7 @@ body section#products {
 }
 
 #products {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffefda), to(#facdbe));
-  background-image: linear-gradient(#ffefda 0%, #facdbe 100%);
+  background: #f0ebe7;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (1fr)[2];
